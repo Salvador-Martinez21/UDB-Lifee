@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "carnet": "MH230747",
+    "password": "qwerty"
+  },
+  {
+    "id": 2,
+    "carnet": "BA242188",
+    "password": "12345"
+  },
+  {
+    "id": 3,
+    "carnet": "CC222422",
+    "password": "12345"
+  },
+  {
+    "id": 4,
+    "carnet": "HA210358",
+    "password": "12345"
+  },
+  {
+    "id": 5,
+    "carnet": "cesar.palma",
+    "password": "12345"
+  }
+]

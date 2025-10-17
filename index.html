@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="https://admacad.udb.edu.sv/Recursos/imagenes/favicon_nuevo.ico" type="image/x-icon">
+    <title>Agenda Ingeniería - UDB</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style-login copy.css" />
+  </head>
+  <body>
+    <!-- Pantalla de Login -->
+    <div id="loginScreen" class="session">
+      <div class="left"></div>
+      <form action="" class="log-in" autocomplete="off" id="loginForm">
+        <img src="css/img/udb_logo UDB color.svg" alt="logo" />
+        <div class="floating-label">
+          <input
+            placeholder="Carnet"
+            name="carnet"
+            id="carnet"
+            autocomplete="on"
+          />
+          <label for="carnet">Carnet:</label>
+          <div class="icon">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg
+              enable-background="new 0 0 100 100"
+              version="1.1"
+              viewBox="0 0 100 100"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <style type="text/css">
+                .st0 {
+                  fill: none;
+                }
+              </style>
+              <g transform="translate(0 -952.36)">
+                <path
+                  d="m17.5 977c-1.3 0-2.4 1.1-2.4 2.4v45.9c0 1.3 1.1 2.4 2.4 2.4h64.9c1.3 0 2.4-1.1 2.4-2.4v-45.9c0-1.3-1.1-2.4-2.4-2.4h-64.9zm2.4 4.8h60.2v1.2l-30.1 22-30.1-22v-1.2zm0 7l28.7 21c0.8 0.6 2 0.6 2.8 0l28.7-21v34.1h-60.2v-34.1z"
+                  fill="#ffffff"
+                />
+              </g>
+              <rect class="st0" width="100" height="100" />
+            </svg>
+          </div>
+        </div>
+        <div class="floating-label">
+          <input
+            placeholder="Contraseña"
+            type="password"
+            name="password"
+            id="password"
+            autocomplete="off"
+          />
+          <label for="password">Contraseña:</label>
+          <div class="icon">
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg
+              enable-background="new 0 0 24 24"
+              version="1.1"
+              viewBox="0 0 24 24"
+              xml:space="preserve"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <style type="text/css">
+                .st0 {
+                  fill: none;
+                }
+                .st1 {
+                  fill: #ffffff;
+                }
+              </style>
+              <rect class="st0" width="24" height="24" />
+              <path class="st1" d="M19,21H5V9h14V21z M6,20h12V10H6V20z" />
+              <path
+                class="st1"
+                d="M16.5,10h-1V7c0-1.9-1.6-3.5-3.5-3.5S8.5,5.1,8.5,7v3h-1V7c0-2.5,2-4.5,4.5-4.5s4.5,2,4.5,4.5V10z"
+              />
+              <path
+                class="st1"
+                d="m12 16.5c-0.8 0-1.5-0.7-1.5-1.5s0.7-1.5 1.5-1.5 1.5 0.7 1.5 1.5-0.7 1.5-1.5 1.5zm0-2c-0.3 0-0.5 0.2-0.5 0.5s0.2 0.5 0.5 0.5 0.5-0.2 0.5-0.5-0.2-0.5-0.5-0.5z"
+              />
+            </svg>
+          </div>
+        </div>
+        <button type="submit" class="loginBtn">Log in</button>
+        <a href="recuperar-password.html" class="discrete"
+          >Olvide mi Contraseña</a
+        >
+      </form>
+    </div>
+
+    <!-- Aplicación Principal -->
+    <div id="appScreen" style="display: none">
+      <!-- Menu principal, donde esta el logo  y botones-->
+      <nav class="navbar bg-body-tertiary custom-navbar">
+        <div class="container-fluid d-flex align-items-center">
+          <span class="navbar-brand mb-0 h1"></span>
+          <img
+            src="css/img/udb_logo UDB color.svg"
+            alt="logo"
+            class="nav-logo"
+          />
+          <span><h1 class="header-txt">UDBLife</h1></span>
+
+          <!--Controles del calendario-->
+          <div id="calendar-controls" class="calendar-controls">
+            <div class="c-monthyear">
+              <div class="c-month">
+                <span
+                  id="prev"
+                  class="prev fa fa-angle-left"
+                  aria-hidden="true"
+                ></span>
+                <div id="c-paginator" class="font-white">
+                  <span id="current-month">ENERO</span>
+                </div>
+                <span
+                  id="next"
+                  class="next fa fa-angle-right"
+                  aria-hidden="true"
+                ></span>
+              </div>
+              <span class="c-paginator__year font-white">2025</span>
+            </div>
+            <div class="c-sort">
+              <a class="o-btn c-today__btn font-white" href="javascript:;"
+                >Este mes</a
+              >
+            </div>
+          </div>
+          <!------------------------------------------------------------------------------->
+          <div class="nav-actions ms-auto">
+            <span id="userCarnet" class="font-white"></span>
+            <button id="nav-btn-regresar" class="btn btn-outline-primary">
+              Regresar
+            </button>
+            <button
+              id="nav-btn"
+              class="btn btn-outline-primary"
+              onclick="app.cerrarSesion()"
+            >
+              Cerrar Sesión
+            </button>
+          </div>
+        </div>
+      </nav>
+      <div id="menu Principal">
+        <div id="wrapper">
+          <ul>
+            <li>
+              <button class="big-btn">Notas<br />📝</button>
+            </li>
+            <li>
+              <button class="big-btn">Calendario<br />🗓️</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Apartado de notas -->
+      <div id="appScreen-notas" class="container" style="display: none">
+        <!-- Formulario para agregar materias -->
+        <section class="form-section">
+          <h2>Agregar Nueva Materia</h2>
+          <form id="materiaForm">
+            <input
+              type="text"
+              id="nombreMateria"
+              placeholder="Nombre de la materia"
+              required
+            />
+            <input
+              type="text"
+              id="codigoMateria"
+              placeholder="Código (ej: CALC1)"
+            />
+            <select id="semestre">
+              <option value="1">Semestre 1</option>
+              <option value="2">Semestre 2</option>
+              <option value="3">Semestre 3</option>
+              <option value="4">Semestre 4</option>
+              <option value="5">Semestre 5</option>
+            </select>
+            <button type="submit" class="btn-app">Agregar Materia</button>
+          </form>
+        </section>
+
+        <!-- Formulario para agregar trabajos -->
+        <section class="form-section">
+          <h2>Agregar Trabajo/Entregable</h2>
+          <form id="trabajoForm">
+            <select id="materiaSelect" required>
+              <option value="">Seleccionar materia</option>
+            </select>
+            <input
+              type="text"
+              id="tituloTrabajo"
+              placeholder="Título del trabajo"
+              required
+            />
+            <textarea
+              id="descripcionTrabajo"
+              placeholder="Descripción"
+            ></textarea>
+            <input type="date" id="fechaEntrega" required />
+            <select id="prioridad">
+              <option value="baja">Baja</option>
+              <option value="media">Media</option>
+              <option value="alta">Alta</option>
+            </select>
+            <button type="submit" class="btn-app">Agregar Trabajo</button>
+          </form>
+        </section>
+
+        <!-- Lista de materias y trabajos -->
+        <section class="materias-section">
+          <h2>Mis Materias y Trabajos</h2>
+          <div id="listaMaterias"></div>
+        </section>
+      </div>
+
+      <!-- Apartado de calendario -->
+      <div id="appScreen-calendario" class="font-white" style="display: none">
+        <div id="header-calendar"></div>
+        <div class="wrapper-calendar">
+          <div class="c-calendar">
+            <div class="c-calendar__style c-aside">
+              <a class="c-add o-btn js-event__add" href="javascript:;"
+                >Agergar evento <span class="fa fa-plus"></span
+              ></a>
+              <div class="c-aside__day">
+                <span class="c-aside__num"></span>
+                <span class="c-aside__month"></span>
+              </div>
+              <div class="c-aside__eventList"></div>
+            </div>
+            <div class="c-cal__container c-calendar__style"></div>
+          </div>
+
+          <div class="c-event__creator c-calendar__style js-event__creator">
+            <a href="javascript:;" class="o-btn js-event__close"
+              >CERRAR <span class="fa fa-close"></span
+            ></a>
+            <form id="addEvent">
+              <input
+                class="input-calendar"
+                placeholder="Event name"
+                type="text"
+                name="name"
+              />
+              <input class="input-calendar" type="date" name="date" />
+              <textarea
+                placeholder="Notes"
+                name="notes"
+                cols="30"
+                rows="10"
+              ></textarea>
+              <select name="tags">
+                <option value="event">evento</option>
+                <option value="important">importante</option>
+                <option value="birthday">cumpleaños</option>
+                <option value="festivity">festividad</option>
+              </select>
+            </form>
+            <br />
+            <a href="javascript:;" class="o-btn js-event__save"
+              >GUARDAR <span class="fa fa-save"></span
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="js/script-hover.js"></script>
+    <script src="js/script copy.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.core.min.js"></script>
+    <script src="js/script-calendar.js"></script>
+  </body>
+</html>
